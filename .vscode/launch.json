@@ -1,0 +1,27 @@
+
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run app.js",
+            "type": "node",
+            "program": "${workspaceRoot}/node_modules/babel-cli/bin/babel-node.js", // Assuming this is your main app file.
+            "stopOnEntry": false,
+            "args": ["${workspaceRoot}/app/src/index.js"],
+            "cwd": "${workspaceRoot}",
+            "runtimeExecutable": null,
+            "env": { "NODE_ENV": "development"}
+        },
+        {
+            "name": "Run mocha",
+            "type": "node",
+            "program": "${workspaceRoot}/node_modules/.bin/_mocha",
+            "stopOnEntry": false,
+            "args": ["--compilers", "js:babel-core/register", "--require",
+            "debug", "${workspaceRoot}/app/tests/test_helper.js"],
+            "cwd": "${workspaceRoot}",
+            "runtimeExecutable": null,
+            "env": { "NODE_ENV": "development"}
+        }
+    ]
+}
